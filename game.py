@@ -21,11 +21,11 @@ if user_choice != "rock" and user_choice != "paper" and user_choice != "scissors
 print("User chose: ", user_choice)
 
 # COMPUTER CHOICE
-import random
+from random import choice
 
 options = ["rock", "paper", "scissors"]
 
-computer_choice = random.choice(options)
+computer_choice = choice(options)
 
 print("Computer chose: ", computer_choice)
 
@@ -33,39 +33,31 @@ print("Computer chose: ", computer_choice)
 
 #scissors beats rock
 
-if user_choice =="rock" and computer_choice == "scissors":
-    winner = "Player One"
+if user_choice == "rock" and computer_choice == "scissors":
+    result = "Player One wins!"
 
-if computer_choice == "rock" and user_choice == "scissors":
-    winner = "computer"
+elif computer_choice == "rock" and user_choice == "scissors":
+    result = "Sorry! The computer won."
 
 #paper beats rock
-if user_choice == "paper" and computer_choice == "rock":
-    winner = "Player One"
+elif user_choice == "paper" and computer_choice == "rock":
+    result = "Player One wins!"
 
-if computer_choice == "paper" and user_choice == "rock":
-    winner = "computer"
+elif computer_choice == "paper" and user_choice == "rock":
+    result = "Sorry! The computer won."
 
 #scissors beats paper
-if user_choice == "scissors" and computer_choice == "paper":
-    winner = "Player One"
-if computer_choice == "scissors" and user_choice == "paper":
-    winner = "computer"
+elif user_choice == "scissors" and computer_choice == "paper":
+    result = "Player One wins!"
+
+elif computer_choice == "scissors" and user_choice == "paper":
+    result = "Sorry! The computer won."
 
 #rock v rock, paper v paper, and scissors v paper result in a "tie"
-if user_choice == "rock" and computer_choice == "rock":
-    winner = "tie"
-if user_choice == "paper" and computer_choice == "paper":
-    winner = "tie"
-if user_choice == "scissors" and computer_choice == "scissors":
-    winner = "tie"
+else:
+    result = "It's a tie!"
 
 # FINAL RESULTS
-if winner == "Player One":
-    print("Player One wins!")
-elif winner == "computer":
-    print("Sorry! The computer won.")
-else:
-    print("It's a tie!")
+print(result)
 
 print("Thanks for playing! Goodbye!")
