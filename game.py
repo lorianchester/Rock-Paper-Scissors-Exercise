@@ -11,18 +11,17 @@ import os
 
 player_name = os.getenv("PLAYER_NAME", default="Player One")
 
-print("Welcome ", player_name, " to my Rock-Paper-Scissors game!")
+print("Welcome", player_name, "to my Rock-Paper-Scissors game!")
 
 # ASK FOR USER INPUT
 user_choice = input("Please choose one of: 'rock', 'paper', 'scissors': ")
-user_choice.lower()
 
 # VALIDATIONS
-if user_choice != "rock" and user_choice != "paper" and user_choice != "scissors":
+if user_choice.lower() != "rock" and user_choice.lower() != "paper" and user_choice.lower() != "scissors":
     print("Sorry! You must choose 'rock', 'paper', or 'scissors'.")
     exit()
 
-print(player_name, "chose: ", user_choice)
+print(player_name, "chose:", user_choice)
 
 # COMPUTER CHOICE
 from random import choice
@@ -37,24 +36,24 @@ print("Computer chose: ", computer_choice)
 
 #scissors beats rock
 
-if user_choice == "rock" and computer_choice == "scissors":
+if user_choice.lower() == "rock" and computer_choice == "scissors":
     result = player_name + " wins!"
 
-elif computer_choice == "rock" and user_choice == "scissors":
+elif computer_choice.lower == "rock" and user_choice.lower() == "scissors":
     result = "Sorry! The computer won."
 
 #paper beats rock
-elif user_choice == "paper" and computer_choice == "rock":
+elif user_choice.lower() == "paper" and computer_choice == "rock":
     result = player_name + " wins!"
 
-elif computer_choice == "paper" and user_choice == "rock":
+elif computer_choice == "paper" and user_choice.lower() == "rock":
     result = "Sorry! The computer won."
 
 #scissors beats paper
-elif user_choice == "scissors" and computer_choice == "paper":
+elif user_choice.lower() == "scissors" and computer_choice == "paper":
     result = player_name + " wins!"
 
-elif computer_choice == "scissors" and user_choice == "paper":
+elif computer_choice == "scissors" and user_choice.lower() == "paper":
     result = "Sorry! The computer won."
 
 #rock v rock, paper v paper, and scissors v paper result in a "tie"
