@@ -6,34 +6,34 @@
 # ... https://github.com/prof-rossetti/intro-to-python/blob/main/exercises/rock-paper-scissors/README.md
 #
 
-def determine_winner(user_choice, computer_choice):
+def determine_winner(choice_1, choice_2):
     #determines the winning choice between two valid choices from selectable options:
     #returns the winning choice (e.g. "paper") or none if there is a tie.
     
     #scissors beats rock
-    if user_choice.lower() == "rock" and computer_choice == "scissors":
-        result = "You wins!"
+    if choice_1.lower() == "rock" and choice_2.lower() == "scissors":
+        result = "rock"
 
-    elif computer_choice == "rock" and user_choice.lower() == "scissors":
-        result = "Sorry! The computer won."
+    elif choice_2.lower() == "rock" and choice_1.lower() == "scissors":
+        result = "rock"
    
     #paper beats rock
-    elif user_choice.lower() == "paper" and computer_choice == "rock":
-        result = "You win!"
+    elif choice_1.lower() == "paper" and choice_2.lower()== "rock":
+        result = "paper"
 
-    elif computer_choice == "paper" and user_choice.lower() == "rock":
-        result = "Sorry! The computer won."
+    elif choice_2.lower() == "paper" and choice_1.lower() == "rock":
+        result = "paper"
 
     #scissors beats paper
-    elif user_choice.lower() == "scissors" and computer_choice == "paper":
-        result = "You win!"
+    elif choice_1.lower() == "scissors" and choice_2.lower() == "paper":
+        result = "scissors"
 
-    elif computer_choice == "scissors" and user_choice.lower() == "paper":
-        result = "Sorry! The computer won."
+    elif choice_2.lower() == "scissors" and choice_1.lower() == "paper":
+        result = "scissors"
 
     #rock v rock, paper v paper, and scissors v paper result in a "tie"
     else:
-        result = "It's a tie!"
+        result = None
     
     return result
 
@@ -73,13 +73,22 @@ if __name__ == "__main__":
     print("Computer chose:", computer_choice)
 
     # DETERMINE THE WINNER
-    #invoke the determine_winner function
+    #invoke the determine_winner function to return the winning choice
     result = determine_winner(user_choice, computer_choice)
+
+    #determine which player had the winning choice
+    if result == None:
+        winner = "It's a tie!"
+    elif result == user_choice:
+        winner = player_name + " wins!"
+    else:
+        winner = "Sorry! The computer won."
+
 
     # FINAL RESULTS
     print("-----------------")
 
-    print(result)
+    print(winner)
 
     print("-----------------")
 
