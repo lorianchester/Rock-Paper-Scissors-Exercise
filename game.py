@@ -65,7 +65,7 @@ if __name__ == "__main__":
     computer_choice = choice(options)
 
     #print computer choice
-    print("Computer chose: ", computer_choice)
+    print("Computer chose:", computer_choice)
 
     # DETERMINE THE WINNER
     #invoke the determine_winner function
