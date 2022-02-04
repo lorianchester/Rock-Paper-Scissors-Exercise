@@ -44,9 +44,14 @@ if __name__ == "__main__":
 
     player_name = os.getenv("PLAYER_NAME", default="Player One")
 
+    #greet player with dashes for formatting
+    print("-----------------")
+
     print("Welcome", player_name, "to my Rock-Paper-Scissors game!")
 
     # ASK FOR USER INPUT
+    print("-----------------")
+    
     user_choice = input("Please choose one of: 'rock', 'paper', 'scissors': ")
 
     # VALIDATIONS
@@ -72,6 +77,10 @@ if __name__ == "__main__":
     result = determine_winner(user_choice, computer_choice)
 
     # FINAL RESULTS
+    print("-----------------")
+
     print(result)
+
+    print("-----------------")
 
     print("Thanks for playing! Goodbye!")
