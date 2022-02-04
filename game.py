@@ -60,7 +60,7 @@ if __name__ == "__main__":
         exit()
 
     #print user choice    
-    print(player_name, "chose:", user_choice)
+    print(player_name, "chose:", user_choice.lower())
 
     # COMPUTER CHOICE
     from random import choice
