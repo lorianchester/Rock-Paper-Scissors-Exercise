@@ -38,5 +38,7 @@ Run tests:
 pytest
 ```
 
-## configure name
+## Configure name
+```sh
 PLAYER_NAME="Jon Snow" python game.py
+```
